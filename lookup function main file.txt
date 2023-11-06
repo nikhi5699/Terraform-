@@ -15,6 +15,7 @@ provider "aws" {
     secret_key = "secret-key"
 }
 
+#Creating Instances based on location and instance type 
 resource "aws_instance" "instance" {
     ami                     = "ami-01bc990364452ab3e"
     instance_type           = lookup(var.instance_type,var.location) 
